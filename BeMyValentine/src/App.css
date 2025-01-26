@@ -1,5 +1,4 @@
 /* Style for the pixel heart */
-
 .pixel-heart {
   display: grid;
   grid-template-columns: repeat(21, 20px);
@@ -84,7 +83,7 @@ button {
   left: 50%;
   transform: translateX(-50%);
   width: 25%;
-  height:75%;
+  height: 75%;
   background-color: #fff;
   border: 2px solid #000;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -104,6 +103,37 @@ button {
   font-size: 1.2rem;
   color: black;
   padding: 20px;
+}
+
+/* Adjust for mobile responsiveness */
+@media (max-width: 768px) {
+  /* Make the paper take up more width on mobile */
+  .paper {
+    width: 80%;
+    height: 80%;
+    padding: 10px;
+  }
+
+  .letter {
+    width: 80%;
+    max-width: 90%;
+  }
+
+  .letter p {
+    bottom: 80px; /* Adjust for better vertical positioning */
+    font-size: 1.1rem; /* Reduce font size for smaller screens */
+    left: 50%; /* Adjust for centering */
+    transform: translateX(-50%);
+  }
+
+  .letter img {
+    max-width: 90%; /* Ensure the image is not too large */
+    width: 100%;
+  }
+
+  .final-message p {
+    font-size: 18px;
+  }
 }
 
 /* Optional styling for buttons and messages */
@@ -138,7 +168,6 @@ button:hover {
 .final-message p {
   font-size: 24px;
 }
-
 
 .restart-btn {
   margin-top: 20px;
