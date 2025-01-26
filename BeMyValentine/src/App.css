@@ -1,0 +1,154 @@
+/* Style for the pixel heart */
+
+.pixel-heart {
+  display: grid;
+  grid-template-columns: repeat(21, 20px);
+  grid-template-rows: repeat(21, 20px);
+  gap: 0px; /* Fix gap to add spacing between grid items */
+}
+
+.pixel-heart div {
+  width: 20px;
+  height: 20px;
+  background-color: #f00;
+  border: 1px solid #8b0000;
+}
+
+.pixel-heart div.empty {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #f0f0f0;
+  text-align: center;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.final-message {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Letter container */
+.letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 60%; /* Adjust width */
+  height: auto;
+  max-width: 500px; /* Set a max-width */
+}
+
+.letter img {
+  width: 100%; /* Adjust width as needed */
+  max-width: 500px; /* Make sure it doesn’t get too large */
+  object-fit: contain; /* Ensures the image keeps its aspect ratio */
+  margin-bottom: 10px;
+}
+
+.letter p {
+  position: absolute;
+  bottom: 150px; /* Adjust to better position text */
+  left: 40%; /* Adjust for horizontal centering */
+  font-size: 1.4rem; /* Increase text size for better readability */
+  color: black; /* Change text color */
+  font-family: 'Pacifico', cursive; /* Use a handwritten font */
+  z-index: 10; /* Ensure the text appears on top of the image */
+}
+
+/* Paper style */
+.paper {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
+  height:75%;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #dcdcdce0 2px, transparent 2px);
+  background-size: 100% 20px;
+}
+
+.message {
+  font-size: 1.2rem;
+  color: black;
+  padding: 20px;
+}
+
+/* Optional styling for buttons and messages */
+button {
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  background-color: #ff6347;
+  color: white;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #f22;
+}
+
+.final-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.final-message p {
+  font-size: 24px;
+}
+
+
+.restart-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #FF69B4;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.restart-btn:hover {
+  background-color: #ff1493; /* Darker pink */
+}
