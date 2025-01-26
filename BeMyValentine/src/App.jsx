@@ -5,6 +5,36 @@ import Confetti from 'react-confetti';
 import './App.css';
 
 function App() {
+  const frontDesign = [
+    '000000000000000000000',
+    '000111110000011111000',
+    '001111111000111111100',
+    '011111111101111111110',
+    '011111111111111111110',
+    '011111111111111111110',
+    '011111111111111111110',
+    '011111111111111111110',
+    '001111111111111111100',
+    '001111111111111111100',
+    '000111111111111111000',
+    '000111111111111111000',
+    '000011111111111110000',
+    '000011111111111110000',
+    '000001111111111100000',
+    '000000111111111000000',
+    '000000011111110000000',
+    '000000001111100000000',
+    '000000001111100000000',
+    '000000000111000000000',
+    '000000000010000000000',
+  ];
+
+  const name = 'Trulli';
+
+  const question = 'Will you be my valentine?';
+
+  const congratulations = 'Congrats. You are now my valentine!';
+
   const [heartBeating, setHeartBeating] = useState(true);
   const [letterVisible, setLetterVisible] = useState(false);
   const [paperVisible, setPaperVisible] = useState(false);
@@ -88,7 +118,7 @@ function App() {
       setConfetti(true); // Trigger confetti animation
       setPaperVisible(false); // Hide the paper
       setTimeout(() => {
-        setAnswer('Congrats. You are now my valentine.');
+        setAnswer(congratulations);
         setTimeout(() => {
           // Delay and animate "Forever... muahaha!"
           gsap.to('.forever-text', { opacity: 1, duration: 3 });
@@ -111,29 +141,7 @@ function App() {
       
       <div className="pixel-heart" onClick={handleHeartClick}>
         {/* Pixelated heart grid (15x15) */}
-        {[
-          '000000000000000000000',
-          '000111110000011111000',
-          '001111111000111111100',
-          '011111111101111111110',
-          '011111111111111111110',
-          '011111111111111111110',
-          '011111111111111111110',
-          '011111111111111111110',
-          '001111111111111111100',
-          '001111111111111111100',
-          '000111111111111111000',
-          '000111111111111111000',
-          '000011111111111110000',
-          '000011111111111110000',
-          '000001111111111100000',
-          '000000111111111000000',
-          '000000011111110000000',
-          '000000001111100000000',
-          '000000001111100000000',
-          '000000000111000000000',
-          '000000000010000000000',
-        ].map((row, rowIndex) =>
+        {frontDesign.map((row, rowIndex) =>
           row.split('').map((cell, cellIndex) => (
             <div
               key={`${rowIndex}-${cellIndex}`}
@@ -156,7 +164,7 @@ function App() {
           ) : (
             <img src="/env_open.png" alt="Changed Letter" />
           )}
-          <p>For Trulli</p>
+          <p>For {name}</p>
         </motion.div>
       )}
 
@@ -174,7 +182,7 @@ function App() {
                 <div>Mmm...looks like you misclicked!!<br />Let's try that one more time shall we.</div>
               </>
             )
-            : 'Will you be my valentine?'}
+            : question}
           </div>
           {!flipped && (
             <div>
